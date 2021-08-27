@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 
 export default function HomePage() {
+    console.log("home page");
 
+    return (
 
-    return <h1>Home Page Here</h1>
+        <h1>Home Page Here</h1>
+
+        );
+
 
 }

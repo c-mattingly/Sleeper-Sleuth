@@ -40,7 +40,7 @@ function App() {
             </Switch>
             </>
             :
-            <Redirect to='/login'/>
+            <Redirect to='/'/>
           }
   
       </Switch>
