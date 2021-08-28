@@ -19,10 +19,10 @@ export default function HomePage() {
     const [userName, setUserName] = useState();
     const [userID, setUserID] = useState();
     const [userAvatar, setUserAvatar] = useState();
-    const[avatar, setAvatar] = useState();
+    const [leagues, setLeagues] = useState([]);
     const classes = useStyles();
     const userUrl = `https://api.sleeper.app/v1/user/${userName}`
-    const avatarUrl = `https://sleepercdn.com/avatars/${userAvatar}`
+    const leaguesUrl = `https://api.sleeper.app/v1/user/${userID}/leagues/nfl/2021`
 
     function handleFormSubmit(userName) {
         setUserName(userName);
@@ -44,24 +44,25 @@ export default function HomePage() {
     }, [userName]);
 
     useEffect(() => {
-        if (userAvatar) {
+        if (userID) {
 
-            fetch(avatarUrl)
+            fetch(leaguesUrl)
 
                 .then((res) => res.json())
-                .then((dataAvatar) => {
-                    setAvatar(dataAvatar)
-                    console.log(dataAvatar)
+                .then((data) => {
+                    setLeagues(data)
+                    console.log(data.avatar)
+                    console.log(data)
                 });
         }
-    }, [userAvatar]);
+    }, [userID]);
 
     return (
         <>
             <h1>Sleeper Sleuth</h1>
 
             <div className={classes.root}>
-                <Grid container spacing={3}>
+                <Grid container spacing={3} justifyContent="center">
                     <Grid item xs={12}>
                         <SearchBar handleFormSubmit={handleFormSubmit} />
                     </Grid>
@@ -70,7 +71,8 @@ export default function HomePage() {
                         classes={classes} 
                         userID={userID} 
                         userName={userName}
-                        userAvatar={userAvatar} />
+                        userAvatar={userAvatar}
+                        leagues={leagues} />
                     </Grid>
                 </Grid>
             </div>

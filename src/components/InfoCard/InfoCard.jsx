@@ -9,24 +9,19 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 
-export default function InfoCard({userName, userID, userAvatar, classes}) {
+export default function InfoCard({userName, userID, userAvatar, classes, leagues}) {
 
-
+console.log(leagues.length)
 
     return (
         <Card className={classes.root}>
             <CardActionArea>
-                <CardMedia
-                    className={classes.media}
-                    image="/static/images/cards/contemplative-reptile.jpg"
-                    title="Contemplative Reptile"
-                />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        {userName}
+                    <Typography gutterBottom variant="h3" component="h2">
+                    <img id="InfoCard-avatar" src={`https://sleepercdn.com/avatars/thumbs/${userAvatar}`} /> {userName}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        PlaceHolder
+                        Leagues: {leagues.length}
                     </Typography>
                 </CardContent>
             </CardActionArea>
