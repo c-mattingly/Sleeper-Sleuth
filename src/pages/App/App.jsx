@@ -31,7 +31,7 @@ function App() {
           <Route exact path="/signup">
              <SignupPage handleSignUpOrLogin={handleSignUpOrLogin}/>
           </Route>
-          {userService.getUser() ? 
+          {/* {userService.getUser() ?  */}
             <> 
              <Switch>
                 <Route exact path="/">
@@ -39,9 +39,9 @@ function App() {
                 </Route>
             </Switch>
             </>
-            :
+            {/* : */}
             <Redirect to='/'/>
-          }
+          {/* } */}
   
       </Switch>
     </div>
