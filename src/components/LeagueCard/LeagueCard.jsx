@@ -9,19 +9,18 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 
-export default function InfoCard({userName, userID, userAvatar, classes, leagues}) {
+export default function LeagueCard({key, classes, league}) {
 
-console.log(leagues.length)
 
     return (
         <Card className={classes.root}>
             <CardActionArea>
                 <CardContent>
                     <Typography gutterBottom variant="h3" component="h2">
-                    <img id="InfoCard-avatar" src={`https://sleepercdn.com/avatars/thumbs/${userAvatar}`} /> {userName}
+                    <img id="InfoCard-avatar" src={`https://sleepercdn.com/avatars/thumbs/${league.avatar}`} /> {league.name}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="h4">
-                        <b>Leagues:</b> {leagues.length}
+                        <b>Number of Teams:</b> {league.total_rosters}
                     </Typography>
                 </CardContent>
             </CardActionArea>

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import SearchBar from '../../components/SearchBar/SearchBar'
-import InfoCard from '../../components/InfoCard/InfoCard'
+import SearchBar from '../../components/SearchBar/SearchBar';
+import InfoCard from '../../components/InfoCard/InfoCard';
+import LeagueFeed from '../../components/LeagueFeed/LeagueFeed';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -51,7 +52,6 @@ export default function HomePage() {
                 .then((res) => res.json())
                 .then((data) => {
                     setLeagues(data)
-                    console.log(data.avatar)
                     console.log(data)
                 });
         }
@@ -66,13 +66,19 @@ export default function HomePage() {
                     <Grid item xs={12}>
                         <SearchBar handleFormSubmit={handleFormSubmit} />
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={12}>
                         <InfoCard 
                         classes={classes} 
                         userID={userID} 
                         userName={userName}
                         userAvatar={userAvatar}
                         leagues={leagues} />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <LeagueFeed
+                        classes={classes} 
+                        leagues={leagues}
+                        userName={userName} />
                     </Grid>
                 </Grid>
             </div>
