@@ -15,3 +15,10 @@ code {
 #InfoCard-avatar {
   border-radius: 20px;
 }
+
+#TeamCard-avatar {
+  border-radius: 20px;
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+}
