@@ -8,11 +8,15 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import TeamCard from '../TeamCard/TeamCard';
+import RosterCard from '../RosterCard/RosterCard';
 
 
 export default function LeagueCard({ classes, league }) {
     const [teams, setTeams] = useState();
+    const [rosters, setRosters] = useState();
+    const [teamInfo, setTeamInfo] = useState();
     const teamsUrl = `https://api.sleeper.app/v1/league/${league.league_id}/users`
+    const rostersUrl = `https://api.sleeper.app/v1/league/${league.league_id}/rosters`
 
 
     useEffect(() => {
@@ -28,7 +32,20 @@ export default function LeagueCard({ classes, league }) {
         }
     }, [league.league_id]);
 
-    if (teams) {
+    useEffect(() => {
+        if (league.league_id) {
+
+            fetch(rostersUrl)
+
+                .then((res) => res.json())
+                .then((data) => {
+                    setRosters(data)
+                    console.log(data)
+                });
+        }
+    }, [league.league_id]);
+
+    if ((teams) && (rosters))  {
 
         return (
             <Card className={classes.root}>
@@ -47,6 +64,8 @@ export default function LeagueCard({ classes, league }) {
                                         classes={classes}
                                         team={team}
                                         key={index}
+                                        rosters={rosters}
+                                        rosterInd={index}
                                     />
                                 );
                             })}
