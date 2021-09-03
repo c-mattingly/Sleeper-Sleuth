@@ -5,7 +5,8 @@ import LeagueCard from '../LeagueCard/LeagueCard';
 
 export default function LeagueFeed({
     leagues,
-    classes
+    classes,
+    userName
 }) {
 
     return (
@@ -18,6 +19,7 @@ export default function LeagueFeed({
                         classes={classes}
                         league={league}
                         key={index}
+                        userName={userName}
                     />
                 );
             })}

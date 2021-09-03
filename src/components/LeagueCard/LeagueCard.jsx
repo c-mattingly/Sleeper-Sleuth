@@ -11,7 +11,7 @@ import TeamCard from '../TeamCard/TeamCard';
 import RosterCard from '../RosterCard/RosterCard';
 
 
-export default function LeagueCard({ classes, league }) {
+export default function LeagueCard({ classes, league, userName }) {
     const [teams, setTeams] = useState();
     const [rosters, setRosters] = useState();
     const [teamInfo, setTeamInfo] = useState();
@@ -52,7 +52,8 @@ export default function LeagueCard({ classes, league }) {
                 <CardActionArea>
                     <CardContent>
                         <Typography gutterBottom variant="h3" component="h2">
-                            <img id="InfoCard-avatar" src={`https://sleepercdn.com/avatars/thumbs/${league.avatar}`} /> {league.name}
+                            <img id="LeagueCard-avatar" src={`https://sleepercdn.com/avatars/thumbs/${league.avatar}`} /> <br />
+                            {league.name}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="h4">
                             <b>Number of Teams:</b> {league.total_rosters}
@@ -66,6 +67,7 @@ export default function LeagueCard({ classes, league }) {
                                         key={index}
                                         rosters={rosters}
                                         rosterInd={index}
+                                        userName={userName}
                                     />
                                 );
                             })}
