@@ -7,9 +7,10 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import RosterCard from '../RosterCard/RosterCard';
 
 
-export default function TeamCard({ classes, team, rosters, userName }) {
+export default function TeamCard({ classes, team, rosters, userName, playerDB }) {
 
     const roster = rosters.find(({ owner_id }) => owner_id === team.user_id);
 
@@ -19,7 +20,7 @@ export default function TeamCard({ classes, team, rosters, userName }) {
                 <CardActionArea>
                     <CardContent>
                         <Typography gutterBottom variant="h4" component="h2">
-                            <img id="TeamCard-avatar" src={team.metadata.avatar ? team.metadata.avatar : `https://sleepercdn.com/avatars/thumbs/${team.avatar}`} /> <br />
+                            <img id="TeamCard-avatar" src={team.metadata.avatar ? team.metadata.avatar : `https://sleepercdn.com/avatars/${team.avatar}`} /> <br />
                             <span className={userName.toLowerCase() === team.display_name.toLowerCase() ? "UserTeam" : "OtherTeam"}>{team.metadata.team_name ? team.metadata.team_name : team.display_name}</span>
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="h4">
@@ -28,7 +29,20 @@ export default function TeamCard({ classes, team, rosters, userName }) {
                             <b>TIES:</b> {roster.settings.ties} &nbsp; <br />
                             <b>TOTAL FANTASY POINTS:</b> {roster.settings.fpts} &nbsp; <br />
                             <b>FAAB SPENT:</b> {roster.settings.waiver_budget_used} &nbsp;
+                        </Typography>
+                        <Typography>
+                            {roster.players.map((player, index) => {
 
+                                return (
+                                    <RosterCard
+                                        classes={classes}
+                                        player={player}
+                                        key={index}
+                                        roster={roster}
+                                        playerDB={playerDB}
+                                    />
+                                );
+                            })}
                         </Typography>
                     </CardContent>
                 </CardActionArea>

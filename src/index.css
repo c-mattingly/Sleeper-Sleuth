@@ -14,6 +14,8 @@ code {
 
 #InfoCard-avatar {
   border-radius: 20px;
+  width: 100px;
+  height: 100px;
 }
 
 #LeagueCard-avatar {
@@ -26,6 +28,13 @@ code {
   border-radius: 30px;
   width: 80px;
   height: 80px;
+  margin: 5px;
+}
+
+#Player-avatar {
+  border-radius: 30px;
+  width: 100px;
+  height: 72px;
   margin: 5px;
 }
 

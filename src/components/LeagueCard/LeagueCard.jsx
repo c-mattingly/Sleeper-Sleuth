@@ -14,10 +14,10 @@ import RosterCard from '../RosterCard/RosterCard';
 export default function LeagueCard({ classes, league, userName }) {
     const [teams, setTeams] = useState();
     const [rosters, setRosters] = useState();
-    const [teamInfo, setTeamInfo] = useState();
+    const [playerDB, setPlayerDB] = useState();
     const teamsUrl = `https://api.sleeper.app/v1/league/${league.league_id}/users`
     const rostersUrl = `https://api.sleeper.app/v1/league/${league.league_id}/rosters`
-
+    const playerDBUrl = "/players.json"
 
     useEffect(() => {
         if (league.league_id) {
@@ -45,6 +45,19 @@ export default function LeagueCard({ classes, league, userName }) {
         }
     }, [league.league_id]);
 
+    useEffect(() => {
+        if (league.league_id) {
+
+            fetch(playerDBUrl)
+
+                .then((res) => res.json())
+                .then((data) => {
+                    setPlayerDB(data)
+                    console.log(data)
+                });
+        }
+    }, [league.league_id]);
+
     if ((teams) && (rosters))  {
 
         return (
@@ -52,7 +65,7 @@ export default function LeagueCard({ classes, league, userName }) {
                 <CardActionArea>
                     <CardContent>
                         <Typography gutterBottom variant="h3" component="h2">
-                            <img id="LeagueCard-avatar" src={`https://sleepercdn.com/avatars/thumbs/${league.avatar}`} /> <br />
+                            <img id="LeagueCard-avatar" src={`https://sleepercdn.com/avatars/${league.avatar}`} /> <br />
                             {league.name}
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="h4">
@@ -68,6 +81,7 @@ export default function LeagueCard({ classes, league, userName }) {
                                         rosters={rosters}
                                         rosterInd={index}
                                         userName={userName}
+                                        playerDB={playerDB}
                                     />
                                 );
                             })}

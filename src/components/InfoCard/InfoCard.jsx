@@ -18,7 +18,7 @@ console.log(leagues.length)
             <CardActionArea>
                 <CardContent>
                     <Typography gutterBottom variant="h3" component="h2">
-                    <img id="InfoCard-avatar" src={`https://sleepercdn.com/avatars/thumbs/${userAvatar}`} /> {userName}
+                    <img id="InfoCard-avatar" src={`https://sleepercdn.com/avatars/${userAvatar}`} /> {userName}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="h4">
                         <b>Leagues:</b> {leagues.length}
