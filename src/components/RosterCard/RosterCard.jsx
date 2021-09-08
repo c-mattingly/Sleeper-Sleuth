@@ -11,14 +11,16 @@ import Typography from '@material-ui/core/Typography';
 
 export default function RosterCard({ classes, player, roster, playerDB }) {
 
+   
     // const playerFile = playerDB.find(({ fantasy_data_id }) => fantasy_data_id === player);
-    console.log(playerDB)
+    console.log(playerDB.fantasy_data_id)
 
 
 
 
     return (
-        <Card className={classes.root}>
+        
+        <Card className={classes.root} id="RosterCard-Card">
             <CardActionArea>
                 <CardContent>
                     <Typography variant="body2" color="textSecondary" component="h4">

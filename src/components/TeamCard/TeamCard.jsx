@@ -30,7 +30,9 @@ export default function TeamCard({ classes, team, rosters, userName, playerDB })
                             <b>TOTAL FANTASY POINTS:</b> {roster.settings.fpts} &nbsp; <br />
                             <b>FAAB SPENT:</b> {roster.settings.waiver_budget_used} &nbsp;
                         </Typography>
+                        <div id="RosterCard-Container">
                         <Typography>
+                            
                             {roster.players.map((player, index) => {
 
                                 return (
@@ -44,6 +46,7 @@ export default function TeamCard({ classes, team, rosters, userName, playerDB })
                                 );
                             })}
                         </Typography>
+                        </div>
                     </CardContent>
                 </CardActionArea>
             </Card>

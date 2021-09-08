@@ -41,3 +41,13 @@ code {
 .UserTeam {
   color: red;
 }
+
+#RosterCard-Container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+#RosterCard-Card {
+  
+}
