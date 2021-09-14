@@ -6,9 +6,15 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Typography from '@material-ui/core/Typography';
 import TeamCard from '../TeamCard/TeamCard';
 import RosterCard from '../RosterCard/RosterCard';
+
+
 
 
 export default function LeagueCard({ classes, league, userName }) {
@@ -18,6 +24,7 @@ export default function LeagueCard({ classes, league, userName }) {
     const teamsUrl = `https://api.sleeper.app/v1/league/${league.league_id}/users`
     const rostersUrl = `https://api.sleeper.app/v1/league/${league.league_id}/rosters`
     const playerDBUrl = "/players.json"
+
 
     useEffect(() => {
         if (league.league_id) {
@@ -58,37 +65,47 @@ export default function LeagueCard({ classes, league, userName }) {
         }
     }, [league.league_id]);
 
-    if ((teams) && (rosters))  {
+    if ((teams) && (rosters)) {
 
         return (
             <Card className={classes.root}>
-                <CardActionArea>
+                <CardActionArea >
                     <CardContent>
                         <Typography gutterBottom variant="h3" component="h2">
                             <img id="LeagueCard-avatar" src={`https://sleepercdn.com/avatars/${league.avatar}`} /> <br />
                             {league.name}
                         </Typography>
-                        <Typography variant="body2" color="textSecondary" component="h4">
-                            <b>Number of Teams:</b> {league.total_rosters}
+                        <Accordion id="LeagueCard-accordion">
+                            <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
 
-                            {teams.map((team, index) => {
+                                <Typography variant="body2" color="textSecondary" component="h4">
+                                    <b>Number of Teams: </b> {league.total_rosters}
+                                </Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
 
-                                return (
-                                    <TeamCard
-                                        classes={classes}
-                                        team={team}
-                                        key={index}
-                                        rosters={rosters}
-                                        rosterInd={index}
-                                        userName={userName}
-                                        playerDB={playerDB}
-                                    />
-                                );
-                            })}
-                        </Typography>
+                                    {teams.map((team, index) => {
+
+                                        return (
+                                            <TeamCard
+                                                classes={classes}
+                                                team={team}
+                                                key={index}
+                                                rosters={rosters}
+                                                rosterInd={index}
+                                                userName={userName}
+                                                playerDB={playerDB}
+                                            />
+                                        );
+                                    })}
+                                </Typography>
+                            </AccordionDetails>
+
+                        </Accordion>
                     </CardContent>
                 </CardActionArea>
-            </Card>
+            </Card >
         )
     } else {
         return (

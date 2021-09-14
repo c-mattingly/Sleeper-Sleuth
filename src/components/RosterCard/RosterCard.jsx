@@ -11,21 +11,25 @@ import Typography from '@material-ui/core/Typography';
 
 export default function RosterCard({ classes, player, roster, playerDB }) {
 
-   
-    // const playerFile = playerDB.find(({ fantasy_data_id }) => fantasy_data_id === player);
-    console.log(playerDB.fantasy_data_id)
+    // const playerFind = Object.values(playerDB)
+    // const playerFindArr = Array.from(playerFind)
+    // const playerFile = Object.values(playerFindArr).reduce((acc, v) => Map.set(v.fantasy_data_id, v), new Map());
+    // console.log(playerFindArr, " <--values");
+
+
+
 
 
 
 
     return (
-        
+
         <Card className={classes.root} id="RosterCard-Card">
             <CardActionArea>
                 <CardContent>
                     <Typography variant="body2" color="textSecondary" component="h4">
-                    <img id="Player-avatar" src={`https://sleepercdn.com/content/nfl/players/${player}.jpg`} /> <br />
-                        
+                        <img id="Player-avatar" src={`https://sleepercdn.com/content/nfl/players/${player}.jpg`} /> <br />
+
                     </Typography>
                 </CardContent>
             </CardActionArea>
