@@ -20,7 +20,8 @@ export default function TeamCard({ classes, team, rosters, userName, playerDB })
 
     if (roster) {
         return (
-            <Card className={classes.root} id="TeamCard-actionArea">
+            <div id="TeamCard-card">
+            <Card className={classes.root} >
                 <CardActionArea>
                     <CardContent>
                     <Accordion>
@@ -39,7 +40,7 @@ export default function TeamCard({ classes, team, rosters, userName, playerDB })
                         </Typography>
                         </AccordionSummary>
                         <AccordionDetails>
-                        <div id="RosterCard-Container">
+                       
                         <Typography>
                             
                             {roster.players.map((player, index) => {
@@ -55,12 +56,13 @@ export default function TeamCard({ classes, team, rosters, userName, playerDB })
                                 );
                             })}
                         </Typography>
-                        </div>
+                      
                         </AccordionDetails>
                         </Accordion>
                     </CardContent>
                 </CardActionArea>
             </Card>
+            </div>
         )
     } else {
         return (

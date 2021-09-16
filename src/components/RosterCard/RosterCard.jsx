@@ -13,9 +13,11 @@ export default function RosterCard({ classes, player, roster, playerDB }) {
 
     // const playerFind = Object.values(playerDB)
     // const playerFindArr = Array.from(playerFind)
-    // const playerFile = Object.values(playerFindArr).reduce((acc, v) => Map.set(v.fantasy_data_id, v), new Map());
+    // const playerFile = Object.values(playerDB).reduce((acc, v) => acc.set(v.fantasy_data_id, v), new Map());
+    const playerFile = Object.keys(playerDB).filter(v => playerDB[v].fantasy_data_id = player).map(key => ({ [key]: playerDB[key] }))
     // console.log(playerFindArr, " <--values");
 
+    console.log(playerFile, " <playerFile")
 
 
 
@@ -23,17 +25,18 @@ export default function RosterCard({ classes, player, roster, playerDB }) {
 
 
     return (
-
-        <Card className={classes.root} id="RosterCard-Card">
+        <div id="RosterCard-card">
+        <Card className={classes.root}>
             <CardActionArea>
                 <CardContent>
                     <Typography variant="body2" color="textSecondary" component="h4">
-                        <img id="Player-avatar" src={`https://sleepercdn.com/content/nfl/players/${player}.jpg`} /> <br />
+                        <img id="Player-avatar" src={`https://sleepercdn.com/content/nfl/players/${player}.jpg`} /> <br />First Last
 
                     </Typography>
                 </CardContent>
             </CardActionArea>
         </Card>
+        </div>
     )
 
 }

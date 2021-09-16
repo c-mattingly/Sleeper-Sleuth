@@ -42,21 +42,32 @@ code {
   color: red;
 }
 
-#TeamCard-actionArea {
-  align-content: center;
+#LeagueCard-card {
+  display: flex !important;
+  align-items: center !important ;
+  justify-content: center !important;
+  flex-direction: column;
 }
 
-#RosterCard-Container {
+#TeamCard-card {
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#RosterCard-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 #LeagueCard-accordion {
   width: 500px;
   display:flex ;
   flex-direction: column;
-  margin: 0;
+  
 }
 
 #TeamCard-accordion {

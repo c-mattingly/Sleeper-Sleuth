@@ -68,7 +68,8 @@ export default function LeagueCard({ classes, league, userName }) {
     if ((teams) && (rosters)) {
 
         return (
-            <Card className={classes.root}>
+            <div id="LeagueCard-card">
+            <Card className={classes.root} >
                 <CardActionArea >
                     <CardContent>
                         <Typography gutterBottom variant="h3" component="h2">
@@ -106,6 +107,7 @@ export default function LeagueCard({ classes, league, userName }) {
                     </CardContent>
                 </CardActionArea>
             </Card >
+            </div>
         )
     } else {
         return (
