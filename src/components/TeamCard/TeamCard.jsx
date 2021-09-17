@@ -18,7 +18,7 @@ export default function TeamCard({ classes, team, rosters, userName, playerDB })
 
     const roster = rosters.find(({ owner_id }) => owner_id === team.user_id);
 
-    if (roster) {
+    if ((roster) && (userName !== "Username Not Found")) {
         return (
             <div id="TeamCard-card">
             <Card className={classes.root} >
@@ -41,7 +41,7 @@ export default function TeamCard({ classes, team, rosters, userName, playerDB })
                         </AccordionSummary>
                         <AccordionDetails>
                        
-                        <Typography>
+                        {/* <Typography>
                             
                             {roster.players.map((player, index) => {
 
@@ -55,7 +55,7 @@ export default function TeamCard({ classes, team, rosters, userName, playerDB })
                                     />
                                 );
                             })}
-                        </Typography>
+                        </Typography> */}
                       
                         </AccordionDetails>
                         </Accordion>
@@ -66,7 +66,7 @@ export default function TeamCard({ classes, team, rosters, userName, playerDB })
         )
     } else {
         return (
-            <h3>.</h3>
+            <h3></h3>
         )
     }
 

@@ -19,14 +19,14 @@ export default function SearchBar({handleFormSubmit}) {
 
 
     return (
-        <Container>
+        <Container id="SearchBar-container">
             <form onSubmit={handleSubmit}>
-            <TextField 
+            <TextField id="SearchBar-textField" 
             htmlFor="leagueSearch" 
             id="filled-search" 
             label="Sleeper Username" 
             type="text" 
-            variant="filled"
+            variant="standard"
             value={leagueSearch}
             onChange={handleInput} />
             <Button color="primary" type="submit">Search</Button>

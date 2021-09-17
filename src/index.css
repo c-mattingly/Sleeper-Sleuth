@@ -42,6 +42,14 @@ code {
   color: red;
 }
 
+#SearchBar-container {
+  text-align: center;
+}
+
+#SearchBar-textField {
+  text-align: center;
+}
+
 #LeagueCard-card {
   display: flex !important;
   align-items: center !important ;

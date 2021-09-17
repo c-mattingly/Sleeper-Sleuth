@@ -14,10 +14,10 @@ export default function RosterCard({ classes, player, roster, playerDB }) {
     // const playerFind = Object.values(playerDB)
     // const playerFindArr = Array.from(playerFind)
     // const playerFile = Object.values(playerDB).reduce((acc, v) => acc.set(v.fantasy_data_id, v), new Map());
-    const playerFile = Object.keys(playerDB).filter(v => playerDB[v].fantasy_data_id = player).map(key => ({ [key]: playerDB[key] }))
+    // const playerFile = Object.keys(playerDB).filter(v => playerDB[v].fantasy_data_id = player).map(key => ({ [key]: playerDB[key] }))
     // console.log(playerFindArr, " <--values");
 
-    console.log(playerFile, " <playerFile")
+    // console.log(playerFile, " <playerFile")
 
 
 

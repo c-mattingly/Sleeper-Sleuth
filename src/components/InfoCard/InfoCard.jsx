@@ -13,6 +13,7 @@ export default function InfoCard({userName, userID, userAvatar, classes, leagues
 
 console.log(leagues.length)
 
+if ((userName) && (userName !== "Username Not Found")) {
     return (
         <Card className={classes.root}>
             <CardActionArea>
@@ -27,4 +28,15 @@ console.log(leagues.length)
             </CardActionArea>
         </Card>
     )
+} else if (!userName) {
+    return (
+        <h3></h3>
+    )
+
+} else {
+    return (
+        <h3>Username Not Found</h3>
+    )
+    
+}
 }

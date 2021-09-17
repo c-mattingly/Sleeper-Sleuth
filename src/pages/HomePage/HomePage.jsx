@@ -36,10 +36,17 @@ export default function HomePage() {
 
                 .then((res) => res.json())
                 .then((data) => {
+                    if (data) {
                     setUserID(data.user_id)
                     setUserAvatar(data.avatar)
                     console.log(data.avatar)
                     console.log(data)
+                    } else if (data == 0){
+                        setUserName("")
+
+                    }else {
+                        setUserName("Username Not Found")
+                    }
                 });
         }
     }, [userName]);

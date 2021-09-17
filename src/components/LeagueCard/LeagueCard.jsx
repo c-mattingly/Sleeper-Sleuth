@@ -65,7 +65,7 @@ export default function LeagueCard({ classes, league, userName }) {
         }
     }, [league.league_id]);
 
-    if ((teams) && (rosters)) {
+    if ((teams) && (rosters) && (userName !== "Username Not Found")) {
 
         return (
             <div id="LeagueCard-card">
@@ -111,7 +111,7 @@ export default function LeagueCard({ classes, league, userName }) {
         )
     } else {
         return (
-            <h3>.</h3>
+            <h3></h3>
         )
     }
 }
