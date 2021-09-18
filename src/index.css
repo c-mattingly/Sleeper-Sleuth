@@ -41,7 +41,9 @@ code {
 }
 
 .UserTeam {
-  color: red;
+  color: #008ab7 !important;
+  font-weight: bold;
+
 }
 
 #SearchBar-container {
@@ -105,4 +107,31 @@ code {
 
 .MuiFormLabel-root {
   color: white !important;
+}
+
+.MuiInputBase-input {
+  background-color: #aaaaaa!important;
+}
+
+input {
+  text-align: center;
+  font-weight: bold;
+}
+
+.MuiButton-label {
+  color: #008ab7 !important;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.MuiTouchRipple-root {
+
+}
+
+.MuiPaper-elevation1 {
+  box-shadow: none !important;
+}
+
+.MuiCard-root {
+  overflow: visible !important;
 }

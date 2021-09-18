@@ -66,7 +66,7 @@ export default function LeagueCard({ classes, league, userName }) {
     }, [league.league_id]);
 
     if ((teams) && (rosters) && (userName !== "Username Not Found")) {
-
+        if (league.avatar) {
         return (
             <div id="LeagueCard-card">
             <Card className={classes.root} >
@@ -111,6 +111,51 @@ export default function LeagueCard({ classes, league, userName }) {
             </Card >
             </div>
         )
+                                } else{
+                                    return (
+                                        <div id="LeagueCard-card">
+            <Card className={classes.root} >
+                <CardActionArea >
+                    <CardContent>
+                        <Typography gutterBottom variant="h3" component="h2">
+                            {league.name}
+                        </Typography>
+                        <Accordion id="LeagueCard-accordion">
+                            <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+
+                                <Typography variant="body2" color="textSecondary" component="h4">
+                                    <b>Number of Teams: </b> {league.total_rosters}
+                                </Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <div className="TeamCard-container">
+                                <Typography>
+
+                                    {teams.map((team, index) => {
+
+                                        return (
+                                            <TeamCard
+                                                classes={classes}
+                                                team={team}
+                                                key={index}
+                                                rosters={rosters}
+                                                rosterInd={index}
+                                                userName={userName}
+                                                playerDB={playerDB}
+                                            />
+                                        );
+                                    })}
+                                </Typography>
+                                </div>
+                            </AccordionDetails>
+
+                        </Accordion>
+                    </CardContent>
+                </CardActionArea>
+            </Card >
+            </div>
+                                    )
+                                }
     } else {
         return (
             <h3></h3>
