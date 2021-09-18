@@ -24,10 +24,10 @@ export default function TeamCard({ classes, team, rosters, userName, playerDB })
             <Card className={classes.root} >
                 <CardActionArea>
                     <CardContent>
-                    <Accordion>
-                            <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+                    {/* <Accordion>
+                            <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header"> */}
 
-                        <Typography gutterBottom variant="h4" component="h2">
+                        <Typography gutterBottom variant="h4" component="h2" className="teamNameWithAvatar">
                             <img id="TeamCard-avatar" src={team.metadata.avatar ? team.metadata.avatar : `https://sleepercdn.com/avatars/${team.avatar}`} /> <br />
                             <span className={userName.toLowerCase() === team.display_name.toLowerCase() ? "UserTeam" : "OtherTeam"}>{team.metadata.team_name ? team.metadata.team_name : team.display_name}</span>
                         </Typography>
@@ -38,9 +38,9 @@ export default function TeamCard({ classes, team, rosters, userName, playerDB })
                             <b>TOTAL FANTASY POINTS:</b> {roster.settings.fpts} &nbsp; <br />
                             <b>FAAB SPENT:</b> {roster.settings.waiver_budget_used} &nbsp;
                         </Typography>
-                        </AccordionSummary>
+                        {/* </AccordionSummary>
                         <AccordionDetails>
-                       
+                        */}
                         {/* <Typography>
                             
                             {roster.players.map((player, index) => {
@@ -57,8 +57,8 @@ export default function TeamCard({ classes, team, rosters, userName, playerDB })
                             })}
                         </Typography> */}
                       
-                        </AccordionDetails>
-                        </Accordion>
+                        {/* </AccordionDetails>
+                        </Accordion> */}
                     </CardContent>
                 </CardActionArea>
             </Card>

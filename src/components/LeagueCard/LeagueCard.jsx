@@ -84,6 +84,7 @@ export default function LeagueCard({ classes, league, userName }) {
                                 </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
+                                <div className="TeamCard-container">
                                 <Typography>
 
                                     {teams.map((team, index) => {
@@ -101,6 +102,7 @@ export default function LeagueCard({ classes, league, userName }) {
                                         );
                                     })}
                                 </Typography>
+                                </div>
                             </AccordionDetails>
 
                         </Accordion>

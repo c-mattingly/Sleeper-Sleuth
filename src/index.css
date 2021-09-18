@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  background-color: #1f212c;
+  color: white;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -43,6 +45,7 @@ code {
 }
 
 #SearchBar-container {
+  color: white;
   text-align: center;
 }
 
@@ -78,6 +81,28 @@ code {
   
 }
 
-#TeamCard-accordion {
+.teamNameWithAvatar {
+  justify-content: center !important;
 
+}
+
+.TeamCard-container {
+  display: flex;
+  flex-direction: column !;
+  align-content: center !important;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.MuiButtonBase-root {
+  color: white !important;
+  background-color: #1f212c !important;
+}
+
+.MuiTypography-root {
+  color: white !important;
+}
+
+.MuiFormLabel-root {
+  color: white !important;
 }
