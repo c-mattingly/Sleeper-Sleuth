@@ -103,14 +103,27 @@ code {
 
 .MuiTypography-root {
   color: white !important;
+  
 }
 
 .MuiFormLabel-root {
   color: white !important;
+  
+}
+
+.MuiInputLabel-root {
+  color: black;
+  
+}
+
+.MuiTextField-root {
+  color: black;
+  
 }
 
 .MuiInputBase-input {
   background-color: #aaaaaa!important;
+  color: black;
 }
 
 input {
@@ -124,7 +137,8 @@ input {
   margin-top: 12px;
 }
 
-.MuiTouchRipple-root {
+.MuiAccordionDetails-root {
+  background: #008ab7;
 
 }
 
