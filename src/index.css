@@ -14,6 +14,15 @@ code {
     monospace;
 }
 
+#logo {
+  width: 500px;
+  height: 129px;
+}
+
+#copyright {
+  margin-top: 200px;
+}
+
 #InfoCard-avatar {
   border-radius: 20px;
   width: 100px;

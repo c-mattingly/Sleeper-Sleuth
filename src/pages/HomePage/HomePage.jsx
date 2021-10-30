@@ -66,7 +66,7 @@ export default function HomePage() {
 
     return (
         <>
-            <h1>Sleeper Sleuth</h1>
+            <img id="logo" src="/sleuthlogo.gif"></img>
 
             <div className={classes.root}>
                 <Grid container spacing={3} justifyContent="center">
@@ -88,6 +88,9 @@ export default function HomePage() {
                         userName={userName} />
                     </Grid>
                 </Grid>
+            </div>
+            <div id="copyright">
+                ©2021 Mike Mattingly
             </div>
         </>
 
